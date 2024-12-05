@@ -1,0 +1,72 @@
+/* src/styles/global.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Color Palette */
+:root {
+  --white: #ffffff;
+  --light-background: #d9d8cf;
+  --dark-background: #a6aaa0;
+  --light-gray: #f0f0f0;
+  --black: #333;
+  --light-green: #0086a1;
+  --dark-gray: #4b4b4b;
+  --gray: #a0a0a0;
+  --accent-color: #263633;
+}
+
+/* Custom global styles */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: var(--light-background);
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    color: var(--black);
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Poppins", sans-serif;
+    color: var(--black);
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: 72px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
+
+  p {
+    color: var(--dark-gray);
+    font-size: 18px;
+  }
+
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+      color: darken(var(--accent-color), 10%);
+    }
+  }
+}

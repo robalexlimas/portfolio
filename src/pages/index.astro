@@ -1,11 +1,30 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "@layouts/Layout.astro";
+import Nav from "@components/Nav.astro";
+import Button from "@components/Button.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <Nav />
+  <section class="hero">
+    <div class="intro">
+      <h1>Hello</h1>
+      <h2>It's Robert, a software developer and designer</h2>
+      <p>+200 Projects completed | +50 Startups raised</p>
+      <Button as="button" id="call-me" aria-label="call me">Call me</Button>
+    </div>
+    <div class="profile-photo">
+      <img src="/images/profile.jpg" alt="Profile Photo" />
+    </div>
+  </section>
 </Layout>
+
+<script>
+  import { $ } from "@lib/dom-selector";
+
+  const button = $("#call-me");
+
+  button?.addEventListener("click", () => {
+    console.log("call me");
+  });
+</script>
